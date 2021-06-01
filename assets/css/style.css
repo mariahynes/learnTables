@@ -1,15 +1,42 @@
-#main{
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+.main{
     width:60%;
+    margin-top: 20px;
     margin-left:auto;
     margin-right:auto;
 }
 
-.w3-sidebar{
-    width: 25%;
+.close-button{
+    padding:unset;
 }
 
-.operator{
-    width: 100%;
-    border: 1px black solid;
+h1, h2{
+    font-family: 'Comfortaa', cursive;
 }
 
+
+.big-number{
+    font-family: 'Comfortaa', cursive;
+    height: 5vh;
+    font-size:xx-large;
+    box-sizing: border-box;
+    line-height: unset;
+}
+.big-number span{
+    padding-top: 5px;
+}
+
+@media screen and (max-width: 600px){
+    .main{
+        width:unset;
+        margin-top: unset;
+    }
+
+    .big-number{
+        font-family: 'Comfortaa', cursive;
+        height: 6vh;
+        font-size:x-large;
+        box-sizing: border-box;
+    }
+}
