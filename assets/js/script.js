@@ -14,13 +14,14 @@ class Numbers {
         for(let i=1; i<this.num_array.length; i++){
             for(let j=0; j<this.num_array.length; j++){
                 
-                operands_array.push([this.num_array[j],this.num_array[i]]);
+                operands_array.push([this.num_array[j],this.num_array[i],this.num_array[i]]);
             }
         }
     
        return operands_array;
         
     }
+    
     addition_array() {
 
         let operands_array=[];
@@ -28,7 +29,7 @@ class Numbers {
         for(let i=1; i<this.num_array.length; i++){
             for(let j=0; j<this.num_array.length; j++){
                 
-                operands_array.push([this.num_array[i],this.num_array[j]]);
+                operands_array.push([this.num_array[i],this.num_array[j],this.num_array[i]]);
             }
         }
     
@@ -43,7 +44,7 @@ class Numbers {
         for(let i=1; i<this.num_array.length; i++){
             for(let j=0; j<this.num_array.length; j++){
                 
-                operands_array.push([(this.num_array[i] + this.num_array[j]) ,this.num_array[i]]);
+                operands_array.push([(this.num_array[i] + this.num_array[j]) ,this.num_array[i],this.num_array[i]]);
             }
         }
 
@@ -57,7 +58,7 @@ class Numbers {
         for(let i=1; i<this.num_array.length; i++){
             for(let j=1; j<this.num_array.length; j++){
                 
-                operands_array.push([(this.num_array[i] * this.num_array[j]) ,this.num_array[i]]);
+                operands_array.push([(this.num_array[i] * this.num_array[j]) ,this.num_array[i],this.num_array[i]]);
             }
         }
         
