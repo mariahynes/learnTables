@@ -1,6 +1,11 @@
 
 class Operands {
-    
+    /**
+        * Constructor can take an integer number value only, if no value or a string value is provided
+        * table_number will be set to 0
+        * If table_number is 0, then each array output will consist of an array of ALL operands (from 1 to 12)
+        * If table_number is a number, then the array output will consist of operands for that table number only
+    */
     constructor(table_number){
 
         if (typeof table_number === "undefined" || typeof table_number === "string"){
@@ -93,8 +98,12 @@ class Operands {
     }
 
     subtraction_array(){
+        /**
+            * Returns a full array of all operands or a specific table, if provided
+        */
 
         let operands_array=[];
+
         if (this.table_number > 0){
             for(let j=0; j<this.num_array.length; j++){
                     
@@ -113,8 +122,11 @@ class Operands {
     }
 
     division_array(){
-
+        /**
+            * Returns a full array of all operands or a specific table, if provided
+        */
         let operands_array=[];
+
         if (this.table_number > 0){
             for(let j=1; j<this.num_array.length; j++){
                     
