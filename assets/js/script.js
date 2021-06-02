@@ -1,38 +1,85 @@
 
-class Numbers {
+class Operands {
     
-    num_array=[0,1,2,3,4,5,6,7,8,9,10,11,12];
+    constructor(table_number){
+
+        if (typeof table_number === "undefined" || typeof table_number === "string"){
+            this.table_number = 0;
+        }else{
+            this.table_number = table_number;
+        }
+        this.num_array = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+
+    }
     
     print_numbers() {
          console.log(this.num_array);
+         console.log(this.table_number);
+    }
+
+    print_multiplication_numbers(){
+        console.log(this.multiplication_array());
+    }
+
+    print_addition_numbers(){
+        console.log(this.addition_array());
     }
 
     multiplication_array() {
+        
+        /**
+            * Returns a full array of all operands or a specific table, if provided
+        */
 
         let operands_array=[];
-
-        for(let i=1; i<this.num_array.length; i++){
+       
+        if (this.table_number > 0){
+            
             for(let j=0; j<this.num_array.length; j++){
-                
-                operands_array.push([this.num_array[j],this.num_array[i],this.num_array[i]]);
+                    
+                operands_array.push([this.num_array[j],this.table_number,this.table_number]);
             }
+
+        }else{
+            
+            for(let i=1; i<this.num_array.length; i++){
+                for(let j=0; j<this.num_array.length; j++){
+                    
+                    operands_array.push([this.num_array[j],this.num_array[i],this.num_array[i]]);
+                }
+            }
+        
         }
-    
+
+        
        return operands_array;
         
     }
     
     addition_array() {
 
+        /**
+            * Returns a full array of all operands or a specific table, if provided
+        */
+
         let operands_array=[];
 
-        for(let i=1; i<this.num_array.length; i++){
+        if (this.table_number > 0){
             for(let j=0; j<this.num_array.length; j++){
-                
-                operands_array.push([this.num_array[i],this.num_array[j],this.num_array[i]]);
+                    
+                operands_array.push([this.table_number,this.num_array[j],this.table_number]);
             }
         }
-    
+        else{
+
+            for(let i=1; i<this.num_array.length; i++){
+                for(let j=0; j<this.num_array.length; j++){
+                    
+                    operands_array.push([this.num_array[i],this.num_array[j],this.num_array[i]]);
+                }
+            }
+        }
+
        return operands_array;
         
     }
@@ -66,8 +113,10 @@ class Numbers {
     }
 }
 
-let the_operands = new Numbers();
+let the_operands = new Operands(3);
  the_operands.print_numbers();
+ the_operands.print_multiplication_numbers();
+ the_operands.print_addition_numbers();
 // console.log(the_operands.num_array);
 let addition_list = the_operands.addition_array();
 // console.log(addition_list[5])
@@ -89,6 +138,6 @@ let subtraction_list = the_operands.subtraction_array();
 
 let division_list = the_operands.division_array();
 // console.log(multiplication_list[5])
-for(let i=0; i< division_list.length; i++){
-    console.log(division_list[i])
-}
+// for(let i=0; i< division_list.length; i++){
+//     console.log(division_list[i])
+// }
