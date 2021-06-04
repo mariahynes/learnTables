@@ -16,24 +16,12 @@ class Operands {
         this.num_array = [0,1,2,3,4,5,6,7,8,9,10,11,12];
 
     }
+
+    /**
+        * Each array consists of list of left and right operand, the table number, the operator
+        * For each of the numbers in the table (1 - 12)
+    */
     
-    
-    print_multiplication_numbers(){
-        console.log(this.multiplication_array());
-    }
-
-    print_addition_numbers(){
-        console.log(this.addition_array());
-    }
-
-    print_subtraction_numbers(){
-        console.log(this.subtraction_array());
-    }
-
-    print_division_numbers(){
-        console.log(this.division_array());
-    }
-
     multiplication_array() {
         
         /**
@@ -145,6 +133,25 @@ class Operands {
         return operands_array;
     }
 
+    /**
+        * Print functions used for testing only
+    */
+    print_multiplication_numbers(){
+        console.log(this.multiplication_array());
+    }
+
+    print_addition_numbers(){
+        console.log(this.addition_array());
+    }
+
+    print_subtraction_numbers(){
+        console.log(this.subtraction_array());
+    }
+
+    print_division_numbers(){
+        console.log(this.division_array());
+    }
+
     print_sums(the_operands_array){
 
         let addition_list = the_operands_array;
@@ -161,13 +168,35 @@ class Operands {
     }
 }
 
-function print_sums(the_table_number){
+function print_all_sums(the_table_number){
+
     let the_operands = new Operands(the_table_number);
 
     the_operands.print_sums(the_operands.multiplication_array());
     the_operands.print_sums(the_operands.division_array());
     the_operands.print_sums(the_operands.subtraction_array());
     the_operands.print_sums(the_operands.addition_array());
+
 }
 
+function format_sums(the_table_number, the_operand){
 
+    let the_operands = new Operands(the_table_number);
+
+    switch(the_operand){
+        case "+":
+            the_operands.print_sums(the_operands.addition_array());
+            break;
+        case "-":
+            the_operands.print_sums(the_operands.subtraction_array());
+            break;
+        case "*":
+            the_operands.print_sums(the_operands.multiplication_array());
+            break;
+        case "/":
+            the_operands.print_sums(the_operands.division_array());
+            break;
+        default:
+            the_operands.print_all_sums(the_table_number);
+    }
+}
