@@ -14,48 +14,51 @@
     <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
         <button class="w3-button w3-hide-large w3-text-blue-grey w3-xlarge w3-right-align"
         onclick="w3_close()">&times;</button>
-        <div id="1" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">1</span></div>
-        <div id="2" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">2</span></div>
-        <div id="3" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">3</span></div>
-        <div id="4" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">4</span></div>
-        <div id="5" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">5</span></div>
-        <div id="6" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">6</span></div>
-        <div id="7" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">7</span></div>
-        <div id="8" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">8</span></div>
-        <div id="9" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">9</span></div>
-        <div id="10" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">10</span></div>
-        <div id="11" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">11</span></div>
-        <div id="12" onclick="format_sums(this.id, selected_operator);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">12</span></div>
+        <div id="1" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">1</span></div>
+        <div id="2" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">2</span></div>
+        <div id="3" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">3</span></div>
+        <div id="4" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">4</span></div>
+        <div id="5" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">5</span></div>
+        <div id="6" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">6</span></div>
+        <div id="7" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">7</span></div>
+        <div id="8" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">8</span></div>
+        <div id="9" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">9</span></div>
+        <div id="10" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">10</span></div>
+        <div id="11" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">11</span></div>
+        <div id="12" onclick="display_sums(this.id);" class="w3-display-container big-number w3-blue-grey w3-text-white w3-margin w3-round w3-animate-zoom w3-hover-red"><span class="w3-display-middle">12</span></div>
     </div>
         
     <div class="w3-main" style="margin-left:200px">
-        
-        <div class="w3-blue-grey">
-            <div class="w3-container w3-hide-small w3-hide-medium">
-                <h1>Learn Tables</h1>
-            </div>
-            <div class="w3-container w3-hide-large">
-                <h2><button class="w3-button w3-blue-grey w3-xlarge" onclick="w3_open()">&#9776;</button><span id="small-heading">Learn Tables</span></h2>
-            </div>
-            <div class="w3-container w3-blue-grey w3-right w3-padding">
-            
-                <div>
-                    <span id="+" class="operator" onclick="select_operator(this.id);">
-                        <i class="fas fa-plus fa-2x w3-hover-text-red"></i>
-                    </span>
-                    <span id="-" class="operator" onclick="select_operator(this.id);">
-                        <i class="fas fa-minus fa-2x w3-hover-text-red"></i>
-                    </span>
-                    <span id="*" class="operator" onclick="select_operator(this.id);">
-                        <i class="fas fa-times fa-2x w3-hover-text-red"></i>
-                    </span>
-                    <span id="/" class="operator" onclick="select_operator(this.id);">
-                        <i class="fas fa-divide fa-2x w3-hover-text-red"></i>
-                    </span>
+        <nav>
+            <div class="w3-blue-grey">
+                <div class="w3-container w3-hide-small w3-hide-medium">
+                    <h1>Learn Tables</h1>
+                </div>
+                <div class="w3-container w3-hide-large">
+                    <h2><button class="w3-button w3-blue-grey w3-xlarge" onclick="w3_open()">&#9776;</button><span id="small-heading">Learn Tables</span></h2>
+                </div>
+                <div class="w3-container w3-blue-grey w3-right w3-padding">
+                
+                    <div>
+                        <span id="+" class="operator" onclick="select_operator(this.id);">
+                            <i class="fas fa-plus fa-2x w3-hover-text-red"></i>
+                        </span>
+                        <span id="-" class="operator" onclick="select_operator(this.id);">
+                            <i class="fas fa-minus fa-2x w3-hover-text-red"></i>
+                        </span>
+                        <span id="*" class="operator" onclick="select_operator(this.id);">
+                            <i class="fas fa-times fa-2x w3-hover-text-red"></i>
+                        </span>
+                        <span id="/" class="operator" onclick="select_operator(this.id);">
+                            <i class="fas fa-divide fa-2x w3-hover-text-red"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-      
+        </nav>
+        <section>
+            <div id="sum_canvas" class="w3-container">Click a number to view the sums!</div>
+        </section>
         
       
         
@@ -99,6 +102,12 @@
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("small-heading").style.marginLeft = "0px";
         }
+
+        function display_sums(table_number){
+            the_sums = format_sums(table_number, selected_operator);
+            document.getElementById('sum_canvas').innerHTML = the_sums;
+        }
+
         </script>
 
     </div>
