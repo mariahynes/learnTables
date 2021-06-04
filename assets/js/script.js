@@ -181,8 +181,8 @@ function print_all_sums(the_table_number){
 
 function format_sums(the_table_number, the_operand){
 
-    let the_operands = new Operands(the_table_number);
-
+    let the_operands = new Operands(parseInt(the_table_number));
+    
     switch(the_operand){
         case "+":
             the_operands.print_sums(the_operands.addition_array());
