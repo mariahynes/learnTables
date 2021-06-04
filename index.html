@@ -31,22 +31,24 @@
     <div class="w3-main" style="margin-left:100px">
         
         <div class="w3-blue-grey">
-            <div class="w3-container w3-hide-small">
+            <div class="w3-container w3-hide-small w3-hide-medium">
                 <h1>Learn Tables</h1>
             </div>
-            <div class="w3-container w3-hide-large w3-hide-medium">
-                <h2><button class="w3-button w3-blue-grey w3-xlarge" onclick="w3_open()">&#9776;</button>Learn Tables</h2>
+            <div class="w3-container w3-hide-large">
+                <h2><button class="w3-button w3-blue-grey w3-xlarge" onclick="w3_open()">&#9776;</button><span id="small-heading">Learn Tables</span></h2>
             </div>
         </div>
         
         
         <script>
         function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("small-heading").style.marginLeft = "30px";
         }
         
         function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("small-heading").style.marginLeft = "0px";
         }
         </script>
 

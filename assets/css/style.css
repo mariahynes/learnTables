@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
 .main{
-    width:60%;
+    width:80%;
     margin-top: 20px;
     margin-left:auto;
     margin-right:auto;
@@ -30,6 +30,20 @@ h1, h2{
 @media screen and (max-width: 600px){
     .main{
         width:unset;
+        margin-top: unset;
+    }
+
+    .big-number{
+        font-family: 'Comfortaa', cursive;
+        height: 6vh;
+        font-size:x-large;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .main{
+        width:100%;
         margin-top: unset;
     }
 
