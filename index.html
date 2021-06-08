@@ -65,6 +65,7 @@
         <script>
 
         window.onload = function(){
+            // start out with addition
             select_operator("+");
         };
         
@@ -72,6 +73,7 @@
 
         function select_operator(the_operator){
 
+            clear_sums();
             operator_list = document.querySelectorAll(".operator");
             selected_operator = document.getElementById(the_operator);
 
@@ -108,6 +110,9 @@
             document.getElementById('sum_canvas').innerHTML = the_sums;
         }
 
+        function clear_sums(){
+            document.getElementById('sum_canvas').innerHTML = "Click a number to view the sums!";
+        }
         </script>
 
     </div>

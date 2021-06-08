@@ -154,14 +154,14 @@ class Operands {
 
     print_sums(the_operands_array){
 
-        let addition_list = the_operands_array;
+        let operands_list = the_operands_array;
         let sum_list = "";
         let ans;
-        for(let i=0; i<addition_list.length; i++){
+        for(let i=0; i<operands_list.length; i++){
 
-            let left_op = parseInt(addition_list[i][0]);
-            let right_op = parseInt(addition_list[i][1]);
-            switch(addition_list[i][3]){
+            let left_op = parseInt(operands_list[i][0]);
+            let right_op = parseInt(operands_list[i][1]);
+            switch(operands_list[i][3]){
                 case "+":
                     ans = left_op + right_op;
                     break;
@@ -175,7 +175,7 @@ class Operands {
                     ans = left_op / right_op;
                     break;
             }
-            let the_sum = left_op + " " + addition_list[i][4] + " " + right_op + " = " + ans;
+            let the_sum = left_op + " " + operands_list[i][4] + " " + right_op + " = " + ans;
             console.log(the_sum);
             sum_list = sum_list + the_sum +"<br>";   
         }
