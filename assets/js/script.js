@@ -30,20 +30,28 @@ class Operands {
 
         let operands_array=[];
         let operator = "*"; 
+        let display_operator = "*"; 
+        let ans;
+        let left_op;
+        let right_op;
 
         if (this.table_number > 0){
             
             for(let j=0; j<this.num_array.length; j++){
-                    
-                operands_array.push([this.num_array[j],this.table_number,this.table_number, operator, "x"]);
+                left_op = this.num_array[j];
+                right_op = this.table_number;
+                ans = left_op * right_op;
+                operands_array.push([this.num_array[j],this.table_number,this.table_number, operator, display_operator, ans]);
             }
 
         }else{
             
             for(let i=1; i<this.num_array.length; i++){
                 for(let j=0; j<this.num_array.length; j++){
-                    
-                    operands_array.push([this.num_array[j],this.num_array[i],this.num_array[i],operator], "x");
+                    left_op = this.num_array[j];
+                    right_op = this.num_array[i];
+                    ans = left_op * right_op;
+                    operands_array.push([this.num_array[j],this.num_array[i],this.num_array[i],operator], display_operator, ans);
                 }
             }
         
@@ -62,19 +70,27 @@ class Operands {
 
         let operands_array=[];
         let operator = "+"; 
+        let display_operator = "+"
+        let ans;
+        let left_op;
+        let right_op;
 
         if (this.table_number > 0){
             for(let j=0; j<this.num_array.length; j++){
-                    
-                operands_array.push([this.table_number,this.num_array[j],this.table_number, operator, operator]);
+                left_op = this.table_number;
+                right_op = this.num_array[j];
+                ans = left_op + right_op;
+                operands_array.push([this.table_number,this.num_array[j],this.table_number, operator, display_operator, ans]);
             }
         }
         else{
 
             for(let i=1; i<this.num_array.length; i++){
                 for(let j=0; j<this.num_array.length; j++){
-                    
-                    operands_array.push([this.num_array[i],this.num_array[j],this.num_array[i],operator, operator]);
+                    left_op = this.num_array[i];
+                    right_op = this.num_array[j];
+                    ans = left_op + right_op;
+                    operands_array.push([this.num_array[i],this.num_array[j],this.num_array[i],operator, display_operator, ans]);
                 }
             }
         }
@@ -90,17 +106,25 @@ class Operands {
 
         let operands_array=[];
         let operator = "-"; 
+        let display_operator = "-";
+        let ans;
+        let left_op;
+        let right_op;
 
         if (this.table_number > 0){
             for(let j=0; j<this.num_array.length; j++){
-                    
-                operands_array.push([(this.table_number + this.num_array[j]) ,this.table_number,this.table_number, operator, operator]);
+                left_op = this.table_number + this.num_array[j];
+                right_op = this.table_number;
+                ans = left_op - right_op;
+                operands_array.push([(this.table_number + this.num_array[j]) ,this.table_number,this.table_number, operator, display_operator, ans]);
             }
         }else{
             for(let i=1; i<this.num_array.length; i++){
                 for(let j=0; j<this.num_array.length; j++){
-                    
-                    operands_array.push([(this.num_array[i] + this.num_array[j]) ,this.num_array[i],this.num_array[i],operator, operator]);
+                    left_op = this.num_array[i] + this.num_array[j];
+                    right_op=  this.num_array[i];
+                    ans = left_op - right_op;
+                    operands_array.push([(this.num_array[i] + this.num_array[j]) ,this.num_array[i],this.num_array[i],operator, display_operator, ans]);
                 }
             }
         }
@@ -114,18 +138,26 @@ class Operands {
         */
         let operands_array=[];
         let operator = "/"; 
+        let display_operator = "&divide";
+        let ans;
+        let left_op;
+        let right_op;
 
         if (this.table_number > 0){
             for(let j=1; j<this.num_array.length; j++){
-                    
-                operands_array.push([(this.table_number * this.num_array[j]) ,this.table_number,this.table_number,operator, "&divide"]);
+                left_op = this.table_number * this.num_array[j];
+                right_op = this.table_number;
+                ans = left_op/right_op;
+                operands_array.push([(this.table_number * this.num_array[j]) ,this.table_number,this.table_number,operator, display_operator, ans]);
             }
 
         }else{
             for(let i=1; i<this.num_array.length; i++){
                 for(let j=1; j<this.num_array.length; j++){
-                    
-                    operands_array.push([(this.num_array[i] * this.num_array[j]) ,this.num_array[i],this.num_array[i],operator, "&divide"]);
+                    left_op = this.num_array[i] * this.num_array[j];
+                    right_op = this.num_array[i];
+                    ans = left_op/right_op;
+                    operands_array.push([(this.num_array[i] * this.num_array[j]) ,this.num_array[i],this.num_array[i],operator, display_operator, ans]);
                 }
             }
         }
@@ -151,31 +183,28 @@ class Operands {
     print_division_numbers(){
         console.log(this.division_array());
     }
-
+/**
+ * Prints the sums and answer in full using a given operands Array
+ * @param {*} the_operands_array 
+ * @returns 
+ */
     print_sums(the_operands_array){
+
+        /** Prints the sum and calculates answer in full 
+          * Use for testing output
+        */
 
         let operands_list = the_operands_array;
         let sum_list = "";
-        let ans;
+       
         for(let i=0; i<operands_list.length; i++){
 
-            let left_op = parseInt(operands_list[i][0]);
-            let right_op = parseInt(operands_list[i][1]);
-            switch(operands_list[i][3]){
-                case "+":
-                    ans = left_op + right_op;
-                    break;
-                case "-":
-                    ans = left_op - right_op;
-                    break;
-                case "*":
-                    ans = left_op * right_op;
-                    break;
-                case "/":
-                    ans = left_op / right_op;
-                    break;
-            }
-            let the_sum = left_op + " " + operands_list[i][4] + " " + right_op + " = " + ans;
+            let left_op = operands_list[i][0];
+            let right_op = operands_list[i][1];
+            let the_display_operand = operands_list[i][4];
+            let ans = operands_list[i][5];
+            let the_sum = left_op + " " + the_display_operand + " " + right_op + " = " + ans;
+
             console.log(the_sum);
             sum_list = sum_list + the_sum +"<br>";   
         }
@@ -183,6 +212,11 @@ class Operands {
     }
 }
 
+
+/**
+ * Prints all sums and answers for a given table number (all operators)
+ * @param {*} the_table_number 
+ */
 function print_all_sums(the_table_number){
 
     let the_operands = new Operands(the_table_number);
@@ -194,6 +228,12 @@ function print_all_sums(the_table_number){
 
 }
 
+/**
+ * Formats the sums for display only for given table and operand
+ * @param {*} the_table_number 
+ * @param {*} the_operand 
+ * @returns 
+ */
 function format_sums(the_table_number, the_operand){
 
     let the_operands = new Operands(parseInt(the_table_number));
