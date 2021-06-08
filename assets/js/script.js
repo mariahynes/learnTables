@@ -183,15 +183,16 @@ class Operands {
     print_division_numbers(){
         console.log(this.division_array());
     }
-/**
- * Prints the sums and answer in full using a given operands Array
- * @param {*} the_operands_array 
- * @returns 
- */
+    
+    /**
+     * Prints the sums and answer in full using a given operands Array
+     * @param {*} the_operands_array 
+     * @returns 
+     */
     print_sums(the_operands_array){
 
-        /** Prints the sum and calculates answer in full 
-          * Use for testing output
+        /** Prints the sums and answers in full for the given array
+          * Use for testing output only
         */
 
         let operands_list = the_operands_array;
@@ -256,4 +257,53 @@ function format_sums(the_table_number, the_operand){
     }
 
     return sums;
+}
+
+function get_sum_array(the_table_number, the_operand){
+
+    let the_operands = new Operands(parseInt(the_table_number));
+
+    switch(the_operand){
+        case "+":
+            sums = the_operands.addition_array();
+            break;
+        case "-":
+            sums = the_operands.subtraction_array();
+            break;
+        case "*":
+            sums = the_operands.multiplication_array();
+            break;
+        case "/":
+            sums = the_operands.division_array();
+            break;
+        default:
+            sums = "";
+    }
+
+    return sums;
+
+}
+
+function get_left_op(the_sum_array, item_count){
+
+    return the_sum_array[item_count][0];
+
+}
+
+function get_right_op(the_sum_array, item_count){
+
+    return the_sum_array[item_count][1];
+
+}
+
+function get_display_op(the_sum_array, item_count){
+
+    return the_sum_array[item_count][4];
+
+}
+
+function get_ans(the_sum_array, item_count){
+
+    return the_sum_array[item_count][5];
+
 }

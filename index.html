@@ -59,7 +59,9 @@
         <section>
             <div id="sum_canvas" class="w3-container">Click a number to view the sums!</div>
         </section>
-        
+        <section>
+           <div id="sum_quiz" class="w3-container"></div>
+        </section>
       
         
         <script>
@@ -106,12 +108,38 @@
         }
 
         function display_sums(table_number){
-            the_sums = format_sums(table_number, selected_operator);
-            document.getElementById('sum_canvas').innerHTML = the_sums;
+            // first will only display a formatted version of entire sum:
+            // the_sums = format_sums(table_number, selected_operator);
+            // document.getElementById('sum_canvas').innerHTML = the_sums;
+
+            // this is the sum array formatted into html form
+            the_sum_array = get_sum_array(table_number, selected_operator);
+                        
+            the_html = "";
+            for(let i=0; i<the_sum_array.length; i++){
+                the_html += "<div>" + get_left_op(the_sum_array, i) + " " + get_display_op(the_sum_array,i) + " " + get_right_op(the_sum_array, i) + " = <input type='number' onblur='checkAns(this, the_sum_array," + i + ")'><span id='ans_" + i + "'></span></div>";
+            }
+            document.getElementById('sum_quiz').innerHTML = the_html;
         }
 
         function clear_sums(){
             document.getElementById('sum_canvas').innerHTML = "Click a number to view the sums!";
+            document.getElementById('sum_quiz').innerHTML = "";
+        }
+
+        function checkAns(a,b,c){
+           ans = b[c][5];
+           ansInput = a.value;
+           ansID = "ans_" + c;
+           
+           if (ansInput.length >0){
+           
+            if (ans == ansInput.trim()){
+                    document.getElementById(ansID).innerHTML = "YES";
+            }else{
+                document.getElementById(ansID).innerHTML = "NO";
+            }
+         }
         }
         </script>
 
