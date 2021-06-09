@@ -133,7 +133,7 @@
         }
 
         function clear_sums(){
-            document.getElementById('sum_canvas').innerHTML = "Click a number to view the sums!";
+            document.getElementById('sum_canvas').innerHTML = "";
             document.getElementById('sum_quiz').innerHTML = "";
         }
 
@@ -145,9 +145,9 @@
            if (ansInput.length >0){
            
             if (ans == ansInput.trim()){
-                    document.getElementById(ansID).innerHTML = "YES";
+                    document.getElementById(ansID).innerHTML = "&nbsp;<i class='far fa-smile w3-text-green'></i>";
             }else{
-                document.getElementById(ansID).innerHTML = "NO";
+                document.getElementById(ansID).innerHTML = "&nbsp;<i class='far fa-frown w3-text-red'></i>";
             }
          }
         }

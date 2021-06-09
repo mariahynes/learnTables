@@ -294,7 +294,8 @@ function print_all_sums(the_table_number){
 function format_sums(the_table_number, the_operand){
 
     let the_operands = new Operands(parseInt(the_table_number));
-    
+    let sums; 
+
     switch(the_operand){
         case "+":
             sums = the_operands.print_sums(the_operands.addition_array());
@@ -318,7 +319,8 @@ function format_sums(the_table_number, the_operand){
 function get_sum_array(the_table_number, the_operand){
 
     let the_operands = new Operands(parseInt(the_table_number));
-
+    let sums;
+    
     switch(the_operand){
         case "+":
             sums = the_operands.addition_array();
