@@ -41,7 +41,14 @@ class Operands {
                 left_op = this.num_array[j];
                 right_op = this.table_number;
                 ans = left_op * right_op;
-                operands_array.push([this.num_array[j],this.table_number,this.table_number, operator, display_operator, ans]);
+                operands_array.push({
+                    left_op:left_op,
+                    right_op:right_op,
+                    table:this.table_number, 
+                    calc_op: operator, 
+                    display_op: display_operator, 
+                    answer: ans
+                });
             }
 
         }else{
@@ -51,7 +58,14 @@ class Operands {
                     left_op = this.num_array[j];
                     right_op = this.num_array[i];
                     ans = left_op * right_op;
-                    operands_array.push([this.num_array[j],this.num_array[i],this.num_array[i],operator], display_operator, ans);
+                    operands_array.push({
+                        left_op:left_op,
+                        right_op:right_op,
+                        table:this.num_array[i],
+                        calc_op:operator, 
+                        display_op:display_operator, 
+                        answer:ans
+                    });
                 }
             }
         
@@ -80,7 +94,14 @@ class Operands {
                 left_op = this.table_number;
                 right_op = this.num_array[j];
                 ans = left_op + right_op;
-                operands_array.push([this.table_number,this.num_array[j],this.table_number, operator, display_operator, ans]);
+                operands_array.push({
+                    left_op: left_op,
+                    right_op: right_op,
+                    table: this.table_number, 
+                    calc_op: operator, 
+                    display_op: display_operator, 
+                    answer: ans
+                });
             }
         }
         else{
@@ -90,7 +111,14 @@ class Operands {
                     left_op = this.num_array[i];
                     right_op = this.num_array[j];
                     ans = left_op + right_op;
-                    operands_array.push([this.num_array[i],this.num_array[j],this.num_array[i],operator, display_operator, ans]);
+                    operands_array.push({
+                        left_op: left_op,
+                        right_op: right_op,
+                        table: this.num_array[i],
+                        calc_op: operator, 
+                        display_op: display_operator, 
+                        answer: ans
+                    });
                 }
             }
         }
@@ -116,7 +144,14 @@ class Operands {
                 left_op = this.table_number + this.num_array[j];
                 right_op = this.table_number;
                 ans = left_op - right_op;
-                operands_array.push([(this.table_number + this.num_array[j]) ,this.table_number,this.table_number, operator, display_operator, ans]);
+                operands_array.push({
+                    left_op:left_op,
+                    right_op: right_op,
+                    table: this.table_number, 
+                    calc_op: operator, 
+                    display_op: display_operator, 
+                    answer: ans
+                });
             }
         }else{
             for(let i=1; i<this.num_array.length; i++){
@@ -124,7 +159,14 @@ class Operands {
                     left_op = this.num_array[i] + this.num_array[j];
                     right_op=  this.num_array[i];
                     ans = left_op - right_op;
-                    operands_array.push([(this.num_array[i] + this.num_array[j]) ,this.num_array[i],this.num_array[i],operator, display_operator, ans]);
+                    operands_array.push({
+                        left_op:left_op,
+                        right_op:right_op, 
+                        table: this.num_array[i],
+                        calc_op: operator, 
+                        display_op: display_operator, 
+                        answer: ans
+                    });
                 }
             }
         }
@@ -148,7 +190,14 @@ class Operands {
                 left_op = this.table_number * this.num_array[j];
                 right_op = this.table_number;
                 ans = left_op/right_op;
-                operands_array.push([(this.table_number * this.num_array[j]) ,this.table_number,this.table_number,operator, display_operator, ans]);
+                operands_array.push({
+                    left_op: left_op,
+                    right_op:right_op,
+                    table:this.table_number,
+                    calc_op:operator, 
+                    display_op: display_operator, 
+                    answer: ans
+                });
             }
 
         }else{
@@ -157,7 +206,14 @@ class Operands {
                     left_op = this.num_array[i] * this.num_array[j];
                     right_op = this.num_array[i];
                     ans = left_op/right_op;
-                    operands_array.push([(this.num_array[i] * this.num_array[j]) ,this.num_array[i],this.num_array[i],operator, display_operator, ans]);
+                    operands_array.push({
+                        left_op:left_op, 
+                        right_op:right_op, 
+                        table: this.num_array[i], 
+                        calc_op: operator, 
+                        display_op: display_operator, 
+                        answer: ans
+                    });
                 }
             }
         }
@@ -200,10 +256,10 @@ class Operands {
        
         for(let i=0; i<operands_list.length; i++){
 
-            let left_op = operands_list[i][0];
-            let right_op = operands_list[i][1];
-            let the_display_operand = operands_list[i][4];
-            let ans = operands_list[i][5];
+            let left_op = operands_list[i].left_op;
+            let right_op = operands_list[i].right_op;
+            let the_display_operand = operands_list[i].display_op;
+            let ans = operands_list[i].answer;
             let the_sum = left_op + " " + the_display_operand + " " + right_op + " = " + ans;
 
             console.log(the_sum);
@@ -286,24 +342,31 @@ function get_sum_array(the_table_number, the_operand){
 
 function get_left_op(the_sum_array, item_count){
 
-    return the_sum_array[item_count][0];
+    // return the_sum_array[item_count][0];
+    return the_sum_array[item_count].left_op;
 
 }
 
 function get_right_op(the_sum_array, item_count){
 
-    return the_sum_array[item_count][1];
+    return the_sum_array[item_count].right_op;
 
 }
 
 function get_display_op(the_sum_array, item_count){
 
-    return the_sum_array[item_count][4];
+    return the_sum_array[item_count].display_op;
+
+}
+
+function get_calc_op(the_sum_array, item_count){
+
+    return the_sum_array[item_count].calc_op;
 
 }
 
 function get_ans(the_sum_array, item_count){
 
-    return the_sum_array[item_count][5];
+    return the_sum_array[item_count].answer;
 
 }
