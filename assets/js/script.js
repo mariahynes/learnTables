@@ -30,7 +30,7 @@ class Operands {
 
         let operands_array=[];
         let operator = "*"; 
-        let display_operator = "*"; 
+        let display_operator = "x"; 
         let ans;
         let left_op;
         let right_op;
@@ -320,7 +320,7 @@ function get_sum_array(the_table_number, the_operand){
 
     let the_operands = new Operands(parseInt(the_table_number));
     let sums;
-    
+
     switch(the_operand){
         case "+":
             sums = the_operands.addition_array();
