@@ -20,8 +20,6 @@ h1, h2{
     font-family: 'Comfortaa', cursive;
     height: 6vh;
     font-size:xx-large;
-    box-sizing: border-box;
-    line-height: 1.5;
 }
 .big-number span{
     padding-top: 5px;
@@ -34,10 +32,8 @@ h1, h2{
     }
 
     .big-number{
-        font-family: 'Comfortaa', cursive;
-        /* height: 6vh; */
-        /* font-size:x-large; */
-        box-sizing: border-box;
+        font-size:x-large;
+        
     }
 }
 
@@ -48,9 +44,8 @@ h1, h2{
     }
 
     .big-number{
-        font-family: 'Comfortaa', cursive;
-        /* height: 6vh; */
+        
         font-size:x-large;
-        box-sizing: border-box;
+       
     }
 }
