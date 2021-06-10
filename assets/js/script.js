@@ -18,7 +18,7 @@ class Operands {
     }
 
     /**
-        * Each array consists of list of left and right operand, the table number, the operator, the display operator
+        * Each array consists of list of left and right operand, the table number, the operator, the display operator and the answer
         * For each of the numbers in the table (1 - 12)
     */
     
