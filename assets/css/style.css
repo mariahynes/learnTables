@@ -26,15 +26,24 @@ h1, h2{
 }
 
 .sum_operator{
-
+    font-family: 'Comfortaa', cursive;
+    font-size: 3em;
+    color: purple;
 }
 
 .sum_operand{
-
+    font-family: 'Comfortaa', cursive;
+    font-size: 3em;
+    color: sienna;
 }
 
-.sum_input{
-    
+.ans_input{
+   
+    display:unset;
+}
+
+.smiley-face{
+    font-size: 3em;
 }
 
 @media screen and (max-width: 600px){
@@ -47,6 +56,17 @@ h1, h2{
         font-size:x-large;
         
     }
+
+    #random_btn{
+        font-size: 0.8em;
+        margin-left:0px;
+    }
+
+    .ans_input{
+       
+        display: unset;
+    }
+    
 }
 
 @media screen and (max-width: 950px){
@@ -59,5 +79,10 @@ h1, h2{
         
         font-size:x-large;
        
+    }
+
+    .ans_input{
+      
+        display: unset;
     }
 }
