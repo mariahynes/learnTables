@@ -42,11 +42,6 @@ h1, h2{
     color:#f44336;
 }
 
-.ans_input{
-   
-    display:unset;
-}
-
 .smiley-face{
     font-size: 3em;
 }
@@ -67,10 +62,22 @@ h1, h2{
         margin-left:0px;
     }
 
-    .ans_input{
-       
-        display: unset;
+    .sum_operator{
+        font-family: 'Comfortaa', cursive;
+        font-size: 2em;
+        color: purple;
     }
+    
+    .sum_operand{
+        font-family: 'Comfortaa', cursive;
+        font-size: 2em;
+        color:#f44336;
+    }
+    
+    .smiley-face{
+        font-size: 3em;
+    }
+
     
 }
 
@@ -86,8 +93,5 @@ h1, h2{
        
     }
 
-    .ans_input{
-      
-        display: unset;
-    }
+  
 }

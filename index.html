@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="w3-container w3-left w3-margin">
-                    <input type="button" id="random_btn" class="w3-button w3-round w3-blue-grey" value="Randomise!" onclick="update_random(this);">
+                    <input type="button" id="random_btn" class="w3-btn w3-round w3-blue-grey w3-text-white" value="Randomise!" onclick="update_random(this);">
                 </div>
             </div>
         </nav>
@@ -117,11 +117,11 @@
 
         function update_random(el){
             
-            if (el.value == "Display in Random Order"){
-                el.value = "Display in Order";
+            if (el.value == "Mix them up!"){
+                el.value = "Put back in Order";
                 make_random = true;
             }else{
-                el.value = "Display in Random Order"
+                el.value = "Mix them up!"
                 make_random = false;
             }
             // if a table number has already been selected, display the sums
@@ -131,7 +131,7 @@
         }
         function reset_random(){
             make_random = false;
-            document.getElementById("random_btn").value = "Display in Random Order";
+            document.getElementById("random_btn").value = "Mix them up!";
             document.getElementById("random_btn").classList.add("w3-hide");
         }
 
@@ -152,13 +152,13 @@
                         
             the_html = "";
             for(let i=0; i<the_sum_array.length; i++){
-                the_html += `<div class="w3-row w3-border center">
+                the_html += `<div class="w3-row center">
                                 <span class="sum_operator w3-container w3-col s2 w3-center "> ${get_left_op(the_sum_array, i)}</span>
-                                <span class="sum_operand w3-container w3-col s1 w3-center "> ${get_display_op(the_sum_array,i)}</span>
+                                <span class="sum_operand w3-container w3-col s1 w3-center center"> ${get_display_op(the_sum_array,i)}</span>
                                 <span class="sum_operator w3-container w3-col s2 w3-center "> ${get_right_op(the_sum_array, i)}</span> 
-                                <span class = "sum_operand w3-container w3-col s1 w3-center ">=</span>
-                                <span class = "w3-container w3-col s3 w3-center ">
-                                    <input type='number' class="w3-input w3-border w3-round-xxlarge ans_input sum_operator center" onfocus='checkSubmit(this,the_sum_array, ${i});' onblur='checkAns(this, the_sum_array, ${i})'>
+                                <span class = "sum_operand w3-container w3-col s1 w3-center center">=</span>
+                                <span class = " w3-col s3 w3-center ">
+                                    <input type='number' class="w3-input w3-border w3-round-xlarge sum_operator w3-center" onfocus='checkSubmit(this,the_sum_array, ${i});' onblur='checkAns(this, the_sum_array, ${i})'>
                                 </span>
                                 <span class = "w3-container w3-col s3 w3-center smiley-face " id='ans_${i}'></span>
                             </div>`;
