@@ -100,7 +100,7 @@
                     if(selected_operator.className.indexOf("w3-text-red") == -1){
                         selected_operator.className += " w3-text-red";
                     } else { 
-                        selected_operator.className = selected_operator.className.replace(" w3-text-red", " w3-hover-text-red");
+                        selected_operator.className = selected_operator.className.replace("w3-text-red", " w3-hover-text-red");
                     }
                 }else{
                     document.getElementById(the_operator_item).className = document.getElementById(the_operator_item).className.replace(" w3-text-red", " w3-hover-text-red");
@@ -152,15 +152,15 @@
                         
             the_html = "";
             for(let i=0; i<the_sum_array.length; i++){
-                the_html += `<div class="w3-cell-row">
-                                <span class="sum_operator w3-container w3-cell w3-cell-middle"> ${get_left_op(the_sum_array, i)}</span>
-                                <span class="sum_operand w3-container w3-cell w3-cell-middle"> ${get_display_op(the_sum_array,i)}</span>
-                                <span class="sum_operator w3-container w3-cell w3-cell-middle"> ${get_right_op(the_sum_array, i)}</span> 
-                                <span class = "sum_operand w3-container w3-cell w3-cell-middle">=</span>
-                                <span class = "w3-container w3-cell w3-cell-middle">
-                                    <input type='number' class="w3-input w3-border w3-round-xxlarge ans_input" onfocus='checkSubmit(this,the_sum_array, ${i});' onblur='checkAns(this, the_sum_array, ${i})'>
+                the_html += `<div class="w3-row w3-border center">
+                                <span class="sum_operator w3-container w3-col s2 w3-center "> ${get_left_op(the_sum_array, i)}</span>
+                                <span class="sum_operand w3-container w3-col s1 w3-center "> ${get_display_op(the_sum_array,i)}</span>
+                                <span class="sum_operator w3-container w3-col s2 w3-center "> ${get_right_op(the_sum_array, i)}</span> 
+                                <span class = "sum_operand w3-container w3-col s1 w3-center ">=</span>
+                                <span class = "w3-container w3-col s3 w3-center ">
+                                    <input type='number' class="w3-input w3-border w3-round-xxlarge ans_input sum_operator center" onfocus='checkSubmit(this,the_sum_array, ${i});' onblur='checkAns(this, the_sum_array, ${i})'>
                                 </span>
-                                <span class = "w3-container w3-cell w3-cell-middle smiley-face" id='ans_${i}'></span>
+                                <span class = "w3-container w3-col s3 w3-center smiley-face " id='ans_${i}'></span>
                             </div>`;
             }
             document.getElementById('sum_quiz').innerHTML = the_html;
@@ -182,9 +182,11 @@
            if (ansInput.length >0){
            
             if (ans == ansInput.trim()){
-                    document.getElementById(ansID).innerHTML = "<i class='far fa-smile w3-text-green'></i>";
+                document.getElementById(ansID).innerHTML = "<i class='far fa-smile w3-text-green'></i>";
+                a.setAttribute("disabled",true);
             }else{
                 document.getElementById(ansID).innerHTML = "<i class='far fa-frown w3-text-red'></i>";
+                
             }
          }
         }
