@@ -267,6 +267,36 @@ class Operands {
         }
         return sum_list;
     }
+    
+    /**
+     * 
+     * @param {*} the_operands_array 
+     * @returns 
+     */
+    randomise_array(the_operands_array){
+
+        let randomised_order=[];
+        let randomised_array=[];
+        let given_length = the_operands_array.length; //the same number of items should be in new array
+
+        while(randomised_order.length<given_length){
+
+            let random_num = parseInt((Math.random() * given_length));
+           
+            let is_there = randomised_order.includes(random_num);
+            if(is_there == false){
+                randomised_order.push(random_num);
+            }
+           
+        }
+
+        for(let i=0;i<randomised_order.length; i++){
+            let array_item = randomised_order[i]
+            randomised_array.push(the_operands_array[array_item]);
+        }
+
+        return randomised_array;
+    }
 }
 
 
@@ -337,7 +367,7 @@ function get_sum_array(the_table_number, the_operand){
         default:
             sums = "";
     }
-
+    sums = the_operands.randomise_array(sums);
     return sums;
 
 }
