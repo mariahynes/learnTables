@@ -271,7 +271,7 @@ class Operands {
     /**
      * 
      * @param {*} the_operands_array 
-     * @returns 
+     * @returns the_operands_array (in a random order)
      */
     randomise_array(the_operands_array){
 
@@ -346,7 +346,7 @@ function format_sums(the_table_number, the_operand){
     return sums;
 }
 
-function get_sum_array(the_table_number, the_operand){
+function get_sum_array(the_table_number, the_operand, is_random){
 
     let the_operands = new Operands(parseInt(the_table_number));
     let sums;
@@ -367,7 +367,10 @@ function get_sum_array(the_table_number, the_operand){
         default:
             sums = "";
     }
-    sums = the_operands.randomise_array(sums);
+    if (is_random == true){
+        sums = the_operands.randomise_array(sums);
+    }
+    
     return sums;
 
 }

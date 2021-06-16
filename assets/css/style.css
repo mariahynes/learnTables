@@ -25,6 +25,18 @@ h1, h2{
     padding-top: 5px;
 }
 
+.sum_operator{
+
+}
+
+.sum_operand{
+
+}
+
+.sum_input{
+    
+}
+
 @media screen and (max-width: 600px){
     .main{
         width:unset;

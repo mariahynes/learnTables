@@ -58,10 +58,11 @@
                         </span>
                     </div>
                 </div>
+                <div class="w3-container w3-left w3-padding w3-margin"><input type="button" id="random_btn" class="w3-button w3-round w3-blue-grey" value="Randomise!" onclick="update_random(this);"></div>
             </div>
         </nav>
         <section>
-            <div id="sum_canvas" class="w3-container">Click a number to view the sums!</div>
+            <div id="sum_canvas" class="w3-container"></div>
         </section>
         <section>
            <div id="sum_quiz" class="w3-container"></div>
@@ -73,12 +74,15 @@
         window.onload = function(){
             // start out with addition
             select_operator("+");
+            //start out with sums in order
+            reset_random();
             //update class on numbers
             addClassToNumbers();
         };
         
         let selected_operator = "+";
         let selected_table = "";
+        let make_random = false;
 
         function select_operator(the_operator){
 
@@ -108,6 +112,25 @@
             }
         }
 
+        function update_random(el){
+            
+            if (el.value == "Display in Random Order"){
+                el.value = "Display in Order";
+                make_random = true;
+            }else{
+                el.value = "Display in Random Order"
+                make_random = false;
+            }
+            // if a table number has already been selected, display the sums
+            if (selected_table.length>0){
+                display_sums(selected_table);
+            }
+        }
+        function reset_random(){
+            make_random = false;
+            document.getElementById("random_btn").value = "Display in Random Order";
+        }
+
         function w3_open() {
             document.getElementById("mySidebar").style.display = "block";
             document.getElementById("small-heading").style.marginLeft = "30px";
@@ -119,23 +142,26 @@
         }
 
         function display_sums(table_number){
-            // first will only display a formatted version of entire sum:
-            // the_sums = format_sums(table_number, selected_operator);
-            // document.getElementById('sum_canvas').innerHTML = the_sums;
-
+          
             // this is the sum array formatted into html form
-            the_sum_array = get_sum_array(table_number, selected_operator);
+            the_sum_array = get_sum_array(table_number, selected_operator,make_random);
                         
             the_html = "";
             for(let i=0; i<the_sum_array.length; i++){
-                the_html += "<div>" + get_left_op(the_sum_array, i) + " " + get_display_op(the_sum_array,i) + " " + get_right_op(the_sum_array, i) + " = <input type='number' onblur='checkAns(this, the_sum_array," + i + ")'><span id='ans_" + i + "'></span></div>";
+                the_html += `<div>
+                            <span class="sum_operator"> ${get_left_op(the_sum_array, i)}</span>
+                            <span class="sum_operand"> ${get_display_op(the_sum_array,i)}</span>
+                            <span class="sum_operator"> ${get_right_op(the_sum_array, i)}</span> 
+                            = <input type='number' style="width: 10vh; display:unset;" class="w3-input w3-border w3-round-xxlarge" onblur='checkAns(this, the_sum_array, ${i})'>
+                            <span class="sum_operator" id='ans_${i}'></span></div>`;
             }
             document.getElementById('sum_quiz').innerHTML = the_html;
             selected_table = table_number;
         }
+        
 
         function clear_sums(){
-            document.getElementById('sum_canvas').innerHTML = "";
+            
             document.getElementById('sum_quiz').innerHTML = "";
         }
 
