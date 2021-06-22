@@ -41,20 +41,20 @@
                 
                     <div>
                         <span id="+" class="operator" onclick="select_operator(this.id);">
-                            <i class="fas fa-plus fa-5x w3-hover-text-red w3-hide-small w3-hide-medium"></i>
-                            <i class="fas fa-plus fa-2x w3-hover-text-red w3-hide-large"></i>
+                            <i class="fas fa-plus fa-5x w3-hover-text-aqua w3-hide-small w3-hide-medium"></i>
+                            <i class="fas fa-plus fa-2x w3-hover-text-aqua w3-hide-large"></i>
                         </span>
                         <span id="-" class="operator" onclick="select_operator(this.id);">
-                            <i class="fas fa-minus fa-5x w3-hover-text-red w3-hide-small w3-hide-medium"></i>
-                            <i class="fas fa-minus fa-2x w3-hover-text-red w3-hide-large"></i>
+                            <i class="fas fa-minus fa-5x w3-hover-text-aqua w3-hide-small w3-hide-medium"></i>
+                            <i class="fas fa-minus fa-2x w3-hover-text-aqua w3-hide-large"></i>
                         </span>
                         <span id="*" class="operator" onclick="select_operator(this.id);">
-                            <i class="fas fa-times fa-5x w3-hover-text-red w3-hide-small w3-hide-medium"></i>
-                            <i class="fas fa-times fa-2x w3-hover-text-red w3-hide-large"></i>
+                            <i class="fas fa-times fa-5x w3-hover-text-aqua w3-hide-small w3-hide-medium"></i>
+                            <i class="fas fa-times fa-2x w3-hover-text-aqua w3-hide-large"></i>
                         </span>
                         <span id="/" class="operator" onclick="select_operator(this.id);">
-                            <i class="fas fa-divide fa-5x w3-hover-text-red w3-hide-small w3-hide-medium"></i>
-                            <i class="fas fa-divide fa-2x w3-hover-text-red w3-hide-large"></i>
+                            <i class="fas fa-divide fa-5x w3-hover-text-aqua w3-hide-small w3-hide-medium"></i>
+                            <i class="fas fa-divide fa-2x w3-hover-text-aqua w3-hide-large"></i>
                         </span>
                     </div>
                 </div>
@@ -97,13 +97,13 @@
                 the_operator_item = operator_list[i].id;
 
                 if (the_operator_item === the_operator) {
-                    if(selected_operator.className.indexOf("w3-text-red") == -1){
-                        selected_operator.className += " w3-text-red";
+                    if(selected_operator.className.indexOf("w3-text-aqua") == -1){
+                        selected_operator.className += " w3-text-aqua";
                     } else { 
-                        selected_operator.className = selected_operator.className.replace("w3-text-red", " w3-hover-text-red");
+                        selected_operator.className = selected_operator.className.replace("w3-text-aqua", " w3-hover-text-aqua");
                     }
                 }else{
-                    document.getElementById(the_operator_item).className = document.getElementById(the_operator_item).className.replace(" w3-text-red", " w3-hover-text-red");
+                    document.getElementById(the_operator_item).className = document.getElementById(the_operator_item).className.replace(" w3-text-aqua", " w3-hover-text-aqua");
                 }
 
             }
@@ -171,7 +171,8 @@
 
         function clear_sums(){
             
-            document.getElementById('sum_quiz').innerHTML = "";
+            document.getElementById('sum_quiz').innerHTML = `<img class='w3-hide-small w3-hide-medium' id='intro_img' src='assets/images/Click_to_start_lge.jpg' alt='Click the menu to start learning'>
+            <img class='w3-hide-large' id='intro_img' src='assets/images/Click_to_start_sm.jpg' alt='Click the menu to start learning'>`;
         }
 
         function checkAns(a,b,c){

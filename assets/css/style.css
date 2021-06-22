@@ -11,6 +11,10 @@
     padding:unset;
 }
 
+#intro_img{
+    width:100%;
+}
+
 h1, h2{
     font-family: 'Comfortaa', cursive;
 }
@@ -33,7 +37,7 @@ h1, h2{
 .sum_operator{
     font-family: 'Comfortaa', cursive;
     font-size: 3em;
-    color: purple;
+    color: #607d8b;
 }
 
 .sum_operand{
