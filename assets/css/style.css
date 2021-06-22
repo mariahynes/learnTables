@@ -53,6 +53,7 @@ h1, h2{
     }
 
     .big-number{
+        height: 5vh;
         font-size:x-large;
         
     }
@@ -88,7 +89,7 @@ h1, h2{
     }
 
     .big-number{
-        
+        height: 7vh;
         font-size:x-large;
        
     }
